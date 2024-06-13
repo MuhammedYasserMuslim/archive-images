@@ -1,0 +1,4 @@
+Spring Data provides sophisticated support to transparently keep track of who created or changed an entity and the point in time this happened. To benefit from that functionality you have to equip your entity classes with auditing metadata that can be defined either using annotations or by implementing an interface.
+
+The implementation is accessing the Authentication object provided by Spring Security and looks up the custom UserDetails instance from it that you have created in your UserDetailsService
+implementation. We’re assuming here that you are exposing the domain user through that UserDetails implementation but you could also look it up from anywhere based on the `Authentication found.

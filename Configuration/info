@@ -1,0 +1,7 @@
+@Configuration is a class-level annotation indicating that an object is a source of bean definitions. 
+@Configuration classes declare beans through @Bean-annotated methods. Calls to @Bean methods on 
+@Configuration classes can also be used to define inter-bean dependencies. See Basic Concepts: @Bean and 
+@Configuration for a general introduction.
+
+
+
