@@ -1,4 +1,4 @@
 The SearchComponent class is designed to capture search input from the user and
 notify parent components about changes to the search text.
 It has a property enterSearchValue to store the current search input and an EventEmitter searchTextChange to emit events whenever the search text changes.
-The method onsearchTextChange is used to emit the current search value, allowing other components to react to the changes in the search input.
+The method onSearchTextChange is used to emit the current search value, allowing other components to react to the changes in the search input.
