@@ -1,9 +1,4 @@
-export class HttpInterceterBaseAuthService implements HttpInterceptor { ... }: This declares a TypeScript class named HttpInterceterBaseAuthService that implements the HttpInterceptor interface. In Angular, interceptors are used to intercept HTTP requests and responses from the client to the server and vice versa.
-
-intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> { ... }: This method is required to implement the HttpInterceptor interface. It intercepts HTTP requests and can modify or handle them before passing them on to the next interceptor in the chain (next).
-
-const authToken = this.auth.getToken();: This calls a method getToken() from the AuthenticationServiceService instance (this.auth) to retrieve the authentication token.
-
-const authReq = req.clone({ ... }): This clones the incoming request (req) and modifies it to include an Authorization header with the retrieved authToken. This ensures that every outgoing HTTP request will include the authentication token in its headers.
-
-return next.handle(authReq);: This passes the modified request (authReq) to the handle method of next, which is an instance of HttpHandler. This method initiates the request execution and returns an Observable of type HttpEvent<any>, allowing the interceptor to observe events such as the HTTP response.
+Intercept Method:
+Retrieves the authentication token using the getToken method from the authentication service.
+Clones the incoming request, adding an Authorization header with the token.
+Passes the modified request to the next handler in the chain.

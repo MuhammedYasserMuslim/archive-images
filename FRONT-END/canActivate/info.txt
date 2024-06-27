@@ -1,5 +1,8 @@
-This CanActivate function is used as a custom route guard in an Angular application:
+The CanActivate function is a route guard that ensures a user is authenticated
+before allowing access to certain routes. It checks for the presence of
+an authentication token using the AuthenticationServiceService.
 
-It checks if there is a valid authentication token using AuthenticationServiceService.
-If a token is present (auth.getToken() returns truthy), it allows navigation to the guarded route (return true;).
-If there is no token (auth.getToken() returns falsy), it redirects the user to the '/login' route using Router (router.navigateByUrl('/login');) and prevents navigation to the guarded route (return false;).
+If the token is present, it grants access by returning true;
+if not, it redirects the user to the login page and returns false.
+
+This function ensures that only authenticated users can access protected routes in the application.

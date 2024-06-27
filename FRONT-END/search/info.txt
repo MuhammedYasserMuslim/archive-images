@@ -1,4 +1,4 @@
-
-This code defines an Angular component (`SearchComponent`) with a mechanism to emit events (`searchTextChange`) whenever `enterSearchValue` changes.
-
-Typically, this component might be used in a parent component's template. The parent component can then listen for the `searchTextChange` event emitted by `SearchComponent` and react accordingly (e.g., updating search results based on the entered search value).
+The SearchComponent class is designed to capture search input from the user and
+notify parent components about changes to the search text.
+It has a property enterSearchValue to store the current search input and an EventEmitter searchTextChange to emit events whenever the search text changes.
+The method onsearchTextChange is used to emit the current search value, allowing other components to react to the changes in the search input.

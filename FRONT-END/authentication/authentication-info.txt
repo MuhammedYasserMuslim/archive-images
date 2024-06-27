@@ -1,28 +1,9 @@
-export class AuthenticationServiceService implements OnInit { ... }
-Declares a TypeScript class named AuthenticationServiceService which implements the OnInit interface. This interface requires the implementation of the ngOnInit() lifecycle hook.
-constructor(private http: HttpClient, private router: Router, private routes: ActivatedRoute) { ... }
-Constructor for AuthenticationServiceService that injects Angular services:
-HttpClient: Allows making HTTP requests.
-Router: Allows navigation between different routes in the application.
-ActivatedRoute: Provides access to information about the currently activated route.
-ngOnInit():
+executeAuthentication Method:
+  Sends a POST request to the login endpoint with the provided username and password.
+  On a successful response, it stores the received JWT token and user ID in the session storage.
 
-Lifecycle hook called when Angular initializes the component.
-Invokes this.canActivate() method, presumably to check if the authentication is active or to perform some initial setup.
-executeAuthentication(username, password):
+getToken Method:
+   Retrieves the stored JWT token from session storage.
 
-Method to authenticate the user by sending a POST request to ${this.base}/login endpoint with provided username and password.
-Uses Angular's HttpClient to make the HTTP POST request.
-Returns an Observable<any> that emits the server's response.
-Uses pipe() and map() operators from RxJS to process the response:
-Stores the received JWT token in sessionStorage prefixed with "Bearer".
-Stores response.id in sessionStorage.
-Returns the entire response object.
-getToken():
-
-Retrieves the JWT token stored in sessionStorage under the key 'token'.
-Returns an empty string ("") if the token is not found.
-decodeToken():
-
-Uses the jwtDecode function (presumably from a library like jwt-decode) to decode the JWT token retrieved using this.getToken().
-Returns the decoded token data.
+decodeToken Method:
+   Decodes the JWT token to extract payload information
